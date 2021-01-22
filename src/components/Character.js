@@ -21,7 +21,7 @@ export default function Character( props ){
         <div className="card">
             <img src={ data.image } />
             <div className="charInfo">
-                <h2><a href="#">{ data.name }</a></h2>
+                <h2><a href={data.url}>{ data.name }</a></h2>
                 <h3><Indicator status={getStatus(data.status)}/>{ data.status } - { data.species }</h3>
                 <span className="info">Last known location</span>
                 <h4><a href={ data.location.url }>{ data.location.name }</a></h4>
