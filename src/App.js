@@ -8,7 +8,7 @@ import CharList from './components/CharList';
 import Searchbar from './components/Searchbar';
 import PageSelector from './components/PageSelector';
 
-let counter = 1;
+let currentPage = 1;
 
 const App = () => {
   const [ url, setUrl ] = useState("https://rickandmortyapi.com/api/character")
@@ -27,12 +27,20 @@ const App = () => {
   
 
   const nextPage = () => {
-    counter++;
-    setUrl(`https://rickandmortyapi.com/api/character?page=${counter}`)
+    if( currentPage === 34 ){
+      return currentPage
+    }else{
+      currentPage++
+    }
+    setUrl(`https://rickandmortyapi.com/api/character?page=${ currentPage }`)
   }
   const prevPage = () => {
-    counter--
-    setUrl(`https://rickandmortyapi.com/api/character?page=${counter}`)
+    if( currentPage === 1 ){
+      return currentPage
+    }else{
+      currentPage--
+    }
+    setUrl(`https://rickandmortyapi.com/api/character?page=${ currentPage }`)
   }
 
   return (
