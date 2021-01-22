@@ -25,7 +25,7 @@ export default function Character( props ){
 
                 <h2><a href={ data.url }>{ data.name }</a></h2>
 
-                <h3><Indicator status={ getStatus( data.status ) }/>{ data.status } - { data.species }</h3>
+                <h3><Indicator status={ getStatus( data.status ) } />{ data.status } - { data.species }</h3>
 
                 <span className="info">Last known location</span>
 

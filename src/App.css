@@ -59,6 +59,9 @@ table {
 }
 /* write your parent styles in here for your App.js */
 
+.pageButtons{
+  margin-bottom:30px;
+}
 .container{
   width:90%;
   margin:auto;

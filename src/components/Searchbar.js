@@ -10,7 +10,6 @@ export default function Searchbar( props ){
             placeholder="Character Name..."
             />
             <SearchButton type="submit">Submit</SearchButton>
-
         </form>
     );
 }
@@ -36,6 +35,7 @@ const SearchField = styled.input`
         color:#ff9800;
         opacity:0.5;
     }
+    
 `;
 const SearchButton = styled.button`
     height: 48px;

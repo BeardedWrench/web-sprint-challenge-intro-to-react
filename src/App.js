@@ -6,6 +6,9 @@ import './App.css';
  */
 import CharList from './components/CharList';
 import Searchbar from './components/Searchbar';
+import PageSelector from './components/PageSelector';
+
+let counter = 1;
 
 const App = () => {
   const [ url, setUrl ] = useState("https://rickandmortyapi.com/api/character")
@@ -16,9 +19,20 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-  const search = ( event ) => {
+  const search = () => {
     const value = document.querySelector('input').value
     setUrl( `https://rickandmortyapi.com/api/character/?name=${ value }` )
+  }
+
+  
+
+  const nextPage = () => {
+    counter++;
+    setUrl(`https://rickandmortyapi.com/api/character?page=${counter}`)
+  }
+  const prevPage = () => {
+    counter--
+    setUrl(`https://rickandmortyapi.com/api/character?page=${counter}`)
   }
 
   return (
@@ -26,6 +40,7 @@ const App = () => {
       <h1 className="Header">Characters</h1>
         <Searchbar onSubmit={ search }/>
         <CharList url={ url }/>
+        <PageSelector prev={ prevPage } next={ nextPage } />
     </div>
   )
 }
