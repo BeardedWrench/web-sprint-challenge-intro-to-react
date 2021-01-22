@@ -19,6 +19,10 @@ const SearchField = styled.input`
     height:30px;
     width:300px;
     border: 4px solid #ff9800;
+    border-top-right-radius:none;
+    border-bottom-right-radius:none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     padding:5px;
     font-weight:600;
     font-size:1.3rem;
@@ -41,6 +45,10 @@ const SearchButton = styled.button`
     cursor: pointer;
     border: 4px solid #ff9800;
     border-left:none;
+    border-top-left-radius:none;
+    border-bottom-left-radius:none;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
     color: #ff9800;
     text-decoration: none;
     font-weight:600;
