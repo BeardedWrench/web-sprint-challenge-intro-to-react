@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+
+/**
+ * Custom Imports
+ */
+import CharList from './components/CharList';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -12,8 +17,9 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+        <CharList url="https://rickandmortyapi.com/api/character"/>
     </div>
-  );
+  )
 }
 
 export default App;
