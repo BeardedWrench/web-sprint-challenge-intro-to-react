@@ -13,13 +13,13 @@ export default function CharList( props ){
         API(`${url}`, ( res ) =>{
             setDetails(res.data.results);
         })
-    }, [])
+    }, [ url ])
 
     return(
         <div className="container">
             {
                 details.map( item  => {
-                    return <Character data={ item } />
+                    return <Character data={ item } key={item.id} />
                 } )
             }
         </div>

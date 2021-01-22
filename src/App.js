@@ -5,8 +5,10 @@ import './App.css';
  * Custom Imports
  */
 import CharList from './components/CharList';
+import Searchbar from './components/Searchbar';
 
 const App = () => {
+  const [ url, setUrl ] = useState("https://rickandmortyapi.com/api/character")
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -14,10 +16,16 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
+  const search = ( event ) => {
+    const value = document.querySelector('input').value
+    setUrl( `https://rickandmortyapi.com/api/character/?name=${ value }` )
+  }
+
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-        <CharList url="https://rickandmortyapi.com/api/character"/>
+        <Searchbar onChange={ search }/>
+        <CharList url={ url }/>
     </div>
   )
 }
