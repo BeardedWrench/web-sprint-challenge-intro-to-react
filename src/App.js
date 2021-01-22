@@ -35,7 +35,7 @@ const App = () => {
     }
   }
   const prevPage = () => {
-    if( currentPage == 0 ){
+    if( currentPage == 1 ){
       return currentPage;
     }else{
       currentPage--
