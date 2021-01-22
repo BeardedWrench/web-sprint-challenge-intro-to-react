@@ -5,7 +5,7 @@ import PageSelector from './PageSelector';
 export default function Searchbar( props ){
     const { onSubmit, prevP, nextP } = props;
     return(
-        <div class="header">
+        <div className="header">
             <form className="search-form" onSubmit={ onSubmit }>
                 <SearchField 
                 type="text" 

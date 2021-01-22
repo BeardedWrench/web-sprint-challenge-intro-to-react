@@ -27,7 +27,7 @@ const App = () => {
   }
 
   const nextPage = () => {
-    if( currentPage == 34 ){
+    if( currentPage === 34 ){
       return currentPage;
     }else{
       currentPage++;
@@ -35,7 +35,7 @@ const App = () => {
     }
   }
   const prevPage = () => {
-    if( currentPage == 1 ){
+    if( currentPage === 1 ){
       return currentPage;
     }else{
       currentPage--
@@ -45,7 +45,9 @@ const App = () => {
 
   return (
     <div className="App">
+      <img className="logo" src='https://i.ibb.co/5rYfrXd/rick.png' alt="Logo" />
       <h1 className="Header">Characters</h1>
+      
         <Searchbar onSubmit={ search }  prevP={ prevPage } nextP={ nextPage } />
         <CharList url={ url }/>
     </div>

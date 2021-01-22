@@ -54,11 +54,13 @@ table {
   color: #f5f5f5;
   font-size:4rem;
   margin-bottom:50px;
-  margin-top:20px;
   font-weight:500;
 }
 /* write your parent styles in here for your App.js */
-
+.logo{
+  height:200px;
+  margin-top:30px;
+}
 .pageButtons{
   margin-bottom:30px;
   margin-top:30px;
