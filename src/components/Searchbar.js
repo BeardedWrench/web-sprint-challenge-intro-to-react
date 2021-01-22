@@ -18,23 +18,33 @@ export default function Searchbar( props ){
 const SearchField = styled.input`
     height:30px;
     width:300px;
-    border: 2px solid #ff9800;
+    border: 4px solid #ff9800;
     padding:5px;
+    font-weight:600;
+    font-size:1.3rem;
+    color:#ff9800;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
 
     &:focus{
         outline:none;
     }
+    &::placeholder{
+        color:#ff9800;
+        opacity:0.5;
+    }
 `;
 const SearchButton = styled.button`
-    height: 44px;
+    height: 48px;
     width:100px;
     background-color: #FFF;
     display: inline-block;
     cursor: pointer;
-    border: 2px solid #ff9800;
+    border: 4px solid #ff9800;
     border-left:none;
     color: #ff9800;
     text-decoration: none;
+    font-weight:600;
+    font-size:1.3rem;
 
     &:hover{
         background-color: #f5f5f5;
