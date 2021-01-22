@@ -9,17 +9,18 @@ import Character from './Character';
 export default function CharList( props ){
     const { url } = props;
     const [ details, setDetails ] = useState( [] );
+
     useEffect( () => {
         API(`${url}`, ( res ) =>{
-            setDetails(res.data.results);
+            setDetails( res.data.results );
         })
-    }, [ url ])
+    }, [ url ] )
 
     return(
         <div className="container">
             {
                 details.map( item  => {
-                    return <Character data={ item } key={item.id} />
+                    return <Character data={ item } key={ item.id } />
                 } )
             }
         </div>

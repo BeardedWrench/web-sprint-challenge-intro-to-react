@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-        <Searchbar onChange={ search }/>
+        <Searchbar onSubmit={ search }/>
         <CharList url={ url }/>
     </div>
   )
