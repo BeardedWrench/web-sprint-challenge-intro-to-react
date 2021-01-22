@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import PageSelector from './PageSelector'
 
 export default function Searchbar( props ){
-    const { onSubmit } = props;
+    const { onSubmit, next, prev } = props;
     return(
-        <form className="search-form" onSubmit={ onSubmit }>
-            <SearchField 
-            type="text" 
-            placeholder="Character Name..."
-            />
-            <SearchButton type="submit">Submit</SearchButton>
-        </form>
+        <div className="navigation">
+            <PageSelector action={ prev } text="Previous" />
+            <form className="search-form" onSubmit={ onSubmit }>
+                <SearchField 
+                type="text" 
+                placeholder="Character Name..."
+                />
+                <SearchButton type="submit">Submit</SearchButton>
+            </form>
+            <PageSelector action={ next } text="Next" />
+        </div>
     );
 }
 

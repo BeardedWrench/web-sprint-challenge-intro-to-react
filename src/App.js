@@ -6,7 +6,7 @@ import './App.css';
  */
 import CharList from './components/CharList';
 import Searchbar from './components/Searchbar';
-import PageSelector from './components/PageSelector';
+
 
 let currentPage = 1;
 
@@ -46,9 +46,9 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-        <Searchbar onSubmit={ search }/>
+        <Searchbar onSubmit={ search } next={ nextPage } prev={ prevPage }/>
         <CharList url={ url }/>
-        <PageSelector prev={ prevPage } next={ nextPage } />
+        
     </div>
   )
 }
