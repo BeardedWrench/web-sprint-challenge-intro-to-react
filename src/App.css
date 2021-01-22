@@ -59,7 +59,8 @@ table {
 }
 /* write your parent styles in here for your App.js */
 
-.navigation{
+.pageButtons{
+  margin-bottom:30px;
   display:flex;
   justify-content: space-evenly;
 }

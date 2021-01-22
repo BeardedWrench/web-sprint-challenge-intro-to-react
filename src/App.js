@@ -6,7 +6,7 @@ import './App.css';
  */
 import CharList from './components/CharList';
 import Searchbar from './components/Searchbar';
-
+import PageSelector from './components/PageSelector';
 
 let currentPage = 1;
 
@@ -19,36 +19,36 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-  const search = () => {
-    const value = document.querySelector('input').value
+  const search = ( event ) => {
+    const value = document.querySelector('input').value;
     setUrl( `https://rickandmortyapi.com/api/character/?name=${ value }` )
+    console.log(url);
+    event.preventDefault();
   }
-
-  
 
   const nextPage = () => {
-    if( currentPage === 34 ){
-      return currentPage
+    if( currentPage == 34 ){
+      return currentPage;
     }else{
-      currentPage++
+      currentPage++;
+      setUrl(`https://rickandmortyapi.com/api/character?page=${currentPage}`)
     }
-    setUrl(`https://rickandmortyapi.com/api/character?page=${ currentPage }`)
   }
   const prevPage = () => {
-    if( currentPage === 1 ){
-      return currentPage
+    if( currentPage == 0 ){
+      return currentPage;
     }else{
       currentPage--
+      setUrl(`https://rickandmortyapi.com/api/character?page=${currentPage}`)
     }
-    setUrl(`https://rickandmortyapi.com/api/character?page=${ currentPage }`)
   }
 
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-        <Searchbar onSubmit={ search } next={ nextPage } prev={ prevPage }/>
+        <Searchbar onSubmit={ search }/>
         <CharList url={ url }/>
-        
+        <PageSelector prev={ prevPage } next={ nextPage } />
     </div>
   )
 }

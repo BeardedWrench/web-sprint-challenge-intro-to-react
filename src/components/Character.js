@@ -19,7 +19,7 @@ export default function Character( props ){
     }
     return (
         <div className="card">
-            <img src={ data.image } />
+            <img src={ data.image } alt={ data.name } />
 
             <div className="charInfo">
 

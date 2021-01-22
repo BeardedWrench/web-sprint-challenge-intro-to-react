@@ -2,9 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function PageSelector( props ){
-    const { action, text } = props;
+    const { next, prev } = props;
     return (
-        <PageButton onClick={ action }>{text}</PageButton>
+        <div className="pageButtons">
+            <PageButton onClick={ prev }>Previous</PageButton>
+            <PageButton onClick={ next }>Next</PageButton>
+        </div>
     );
 }
 
@@ -20,7 +23,7 @@ const PageButton = styled.button`
     text-decoration: none;
     font-weight:600;
     font-size:1.3rem;
-
+    margin-left:10px;
     &:hover{
         background-color: #f5f5f5;
     }
@@ -30,4 +33,4 @@ const PageButton = styled.button`
     &:focus{
         outline:none;
     }
-`;
+`; 
