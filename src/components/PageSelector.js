@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function PageSelector( props ){
-    const { next, prev } = props;
+    const { nextP, prevP } = props;
     return (
         <div className="pageButtons">
-            <PageButton onClick={ prev }>Previous</PageButton>
-            <PageButton onClick={ next }>Next</PageButton>
+            <PageButton onClick={ prevP }>Previous</PageButton>
+            <PageButton onClick={ nextP }>Next</PageButton>
         </div>
     );
 }
