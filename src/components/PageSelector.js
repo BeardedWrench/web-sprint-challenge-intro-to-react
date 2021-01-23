@@ -17,9 +17,9 @@ const PageButton = styled.button`
     background-color: #FFF;
     display: inline-block;
     cursor: pointer;
-    border: 4px solid #ff9800;
+    border: 4px solid #12B0C9;
     border-radius: 5px;
-    color: #ff9800;
+    color: #12B0C9;
     text-decoration: none;
     font-weight:600;
     font-size:1.3rem;
