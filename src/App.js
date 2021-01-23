@@ -50,6 +50,8 @@ const App = () => {
       
         <Searchbar onSubmit={ search }  prevP={ prevPage } nextP={ nextPage } />
         <CharList url={ url }/>
+        
+      <div className="footer">Created By: <a href="http://www.github.com/beardedwrench">Terry Brown</a></div>
     </div>
   )
 }
