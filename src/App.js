@@ -33,7 +33,6 @@ const App = () => {
   const search = ( event ) => {
     const value = document.querySelector('input').value;
     setUrl( `https://rickandmortyapi.com/api/character/?name=${ value }` )
-    console.log(url);
     event.preventDefault();
   }
   const nextPage = () =>{
@@ -45,7 +44,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <a href=""><img className="logo" src='https://i.ibb.co/5rYfrXd/rick.png' alt="Logo" /></a>
+      <img className="logo" src='https://i.ibb.co/5rYfrXd/rick.png' alt="Logo" />
       <h1 className="Header">Characters</h1>
       
         <Searchbar onSubmit={ search } />
