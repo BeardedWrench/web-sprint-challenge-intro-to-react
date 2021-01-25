@@ -19,7 +19,7 @@ const App = () => {
 
   useEffect( () => {
     API(`${url}`, ( res ) =>{
-        setDetails( res.data );
+        setDetails( res.data.info );
     })
   }, [ url ] )
 
@@ -37,10 +37,10 @@ const App = () => {
     event.preventDefault();
   }
   const nextPage = () =>{
-    setUrl(details.info.next);
+    setUrl(details.next);
   }
   const prevPage = () =>{
-    setUrl(details.info.prev);
+    setUrl(details.prev);
   }
 
   return (
