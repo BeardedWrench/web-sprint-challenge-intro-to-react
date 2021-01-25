@@ -40,6 +40,7 @@ const SearchField = styled.input`
         color:#12B0C9;
         opacity:0.5;
     }
+
     
 `;
 const SearchButton = styled.button`
@@ -58,7 +59,6 @@ const SearchButton = styled.button`
     text-decoration: none;
     font-weight:600;
     font-size:1.3rem;
-
     &:hover{
         background-color: #f5f5f5;
     }

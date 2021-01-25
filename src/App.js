@@ -45,7 +45,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <img className="logo" src='https://i.ibb.co/5rYfrXd/rick.png' alt="Logo" />
+      <a href=""><img className="logo" src='https://i.ibb.co/5rYfrXd/rick.png' alt="Logo" /></a>
       <h1 className="Header">Characters</h1>
       
         <Searchbar onSubmit={ search } />
