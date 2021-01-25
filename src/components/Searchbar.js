@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import PageSelector from './PageSelector';
+
 
 export default function Searchbar( props ){
-    const { onSubmit, prevP, nextP } = props;
+    const { onSubmit } = props;
     return(
         <div className="header">
             <form className="search-form" onSubmit={ onSubmit }>
@@ -13,7 +13,7 @@ export default function Searchbar( props ){
                 />
                 <SearchButton type="submit">Submit</SearchButton>
             </form>
-            <PageSelector nextP={ nextP } prevP={ prevP } />
+            
         </div>
     );
 }

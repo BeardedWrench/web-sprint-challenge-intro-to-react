@@ -1,17 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 /**
  * Custom Imports
  */
+import API from './components/api';
 import CharList from './components/CharList';
 import Searchbar from './components/Searchbar';
+import PageSelector from './components/PageSelector';
 
 
-let currentPage = 1;
+//let currentPage = 1;
 
 const App = () => {
   const [ url, setUrl ] = useState("https://rickandmortyapi.com/api/character")
+
+  const [ details, setDetails ] = useState( [] )
+
+  useEffect( () => {
+    API(`${url}`, ( res ) =>{
+        setDetails( res.data );
+    })
+  }, [ url ] )
+
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -25,22 +36,11 @@ const App = () => {
     console.log(url);
     event.preventDefault();
   }
-
-  const nextPage = () => {
-    if( currentPage === 34 ){
-      return currentPage;
-    }else{
-      currentPage++;
-      setUrl(`https://rickandmortyapi.com/api/character?page=${currentPage}`)
-    }
+  const nextPage = () =>{
+    setUrl(details.info.next);
   }
-  const prevPage = () => {
-    if( currentPage === 1 ){
-      return currentPage;
-    }else{
-      currentPage--
-      setUrl(`https://rickandmortyapi.com/api/character?page=${currentPage}`)
-    }
+  const prevPage = () =>{
+    setUrl(details.info.prev);
   }
 
   return (
@@ -48,8 +48,10 @@ const App = () => {
       <img className="logo" src='https://i.ibb.co/5rYfrXd/rick.png' alt="Logo" />
       <h1 className="Header">Characters</h1>
       
-        <Searchbar onSubmit={ search }  prevP={ prevPage } nextP={ nextPage } />
+        <Searchbar onSubmit={ search } />
         <CharList url={ url }/>
+
+        <PageSelector nextP={ nextPage } prevP={ prevPage } />
         
       <div className="footer">Created By: <a href="http://www.github.com/beardedwrench">Terry Brown</a></div>
     </div>
